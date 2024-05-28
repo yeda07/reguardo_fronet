@@ -18,12 +18,25 @@ import Iconify from 'src/components/iconify';
 
 export default function UserTableRow({
   selected,
-  name,
-  avatarUrl,
-  company,
-  role,
-  isVerified,
-  status,
+  vigencia,
+  resguardoInd,
+  comunidadInd,
+  nombres,
+  apellidos,
+  tipoDocumento,
+  numeroDocumento,
+  expDocumento,
+  fechaNacimiento,
+  parentesco,
+  sexo,
+  estadoCivil,
+  profesion,
+  escolaridad,
+  integrantes,
+  direccion,
+  telefono,
+  usuario,
+  familiaId,
   handleClick,
 }) {
   const [open, setOpen] = useState(null);
@@ -45,23 +58,27 @@ export default function UserTableRow({
 
         <TableCell component="th" scope="row" padding="none">
           <Stack direction="row" alignItems="center" spacing={2}>
-            <Avatar alt={name} src={avatarUrl} />
+            <Avatar alt={nombres} src="" />
             <Typography variant="subtitle2" noWrap>
-              {name}
+              {nombres} {apellidos}
             </Typography>
           </Stack>
         </TableCell>
 
-        <TableCell>{company}</TableCell>
-
-        <TableCell>{role}</TableCell>
-
-        <TableCell align="center">{isVerified ? 'Yes' : 'No'}</TableCell>
-
-        <TableCell>
-          <Label color={(status === 'banned' && 'error') || 'success'}>{status}</Label>
-        </TableCell>
-
+        <TableCell>{tipoDocumento}</TableCell>
+        <TableCell>{numeroDocumento}</TableCell>
+        <TableCell>{expDocumento}</TableCell>
+        <TableCell>{fechaNacimiento}</TableCell>
+        <TableCell>{parentesco}</TableCell>
+        <TableCell>{sexo}</TableCell>
+        <TableCell>{estadoCivil}</TableCell>
+        <TableCell>{profesion}</TableCell>
+        <TableCell>{escolaridad}</TableCell>
+        <TableCell>{integrantes}</TableCell>
+        <TableCell>{direccion}</TableCell>
+        <TableCell>{telefono}</TableCell>
+        <TableCell>{usuario}</TableCell>
+        <TableCell>{familiaId}</TableCell>
         <TableCell align="right">
           <IconButton onClick={handleOpenMenu}>
             <Iconify icon="eva:more-vertical-fill" />
@@ -94,12 +111,25 @@ export default function UserTableRow({
 }
 
 UserTableRow.propTypes = {
-  avatarUrl: PropTypes.any,
-  company: PropTypes.any,
+  vigencia: PropTypes.string,
+  resguardoInd: PropTypes.number,
+  comunidadInd: PropTypes.number,
+  nombres: PropTypes.string,
+  apellidos: PropTypes.string,
+  tipoDocumento: PropTypes.string,
+  numeroDocumento: PropTypes.number,
+  expDocumento: PropTypes.string,
+  fechaNacimiento: PropTypes.string,
+  parentesco: PropTypes.string,
+  sexo: PropTypes.string,
+  estadoCivil: PropTypes.string,
+  profesion: PropTypes.string,
+  escolaridad: PropTypes.string,
+  integrantes: PropTypes.number,
+  direccion: PropTypes.string,
+  telefono: PropTypes.string,
+  usuario: PropTypes.string,
+  familiaId: PropTypes.number,
   handleClick: PropTypes.func,
-  isVerified: PropTypes.any,
-  name: PropTypes.any,
-  role: PropTypes.any,
-  selected: PropTypes.any,
-  status: PropTypes.string,
+  selected: PropTypes.bool,
 };

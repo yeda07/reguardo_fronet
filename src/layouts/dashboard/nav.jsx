@@ -83,17 +83,17 @@ export default function Nav({ openNav, onCloseNav }) {
           <Typography variant="h6">Get more?</Typography>
 
           <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
-            From only $69
+            d
           </Typography>
         </Box>
 
         <Button
-          href="https://material-ui.com/store/items/minimal-dashboard/"
+          href=""
           target="_blank"
           variant="contained"
           color="inherit"
         >
-          Upgrade to Pro
+          Upgrade 
         </Button>
       </Stack>
     </Box>
